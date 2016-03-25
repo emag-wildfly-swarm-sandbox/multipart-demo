@@ -25,8 +25,10 @@ public class MediaController {
 
     String fileName = getFileName(headers);
 
+    String message = String.format("uploaded file name: %s at %s", fileName, new DateTime());
+    
     return Response.status(200)
-      .entity(String.format("uploaded file name: %s at %s", fileName, new DateTime())).build();
+      .entity(message).build();
   }
 
   private String getFileName(MultivaluedMap<String, String> headers) {
