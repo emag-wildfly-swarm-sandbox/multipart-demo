@@ -13,5 +13,5 @@ $ ./mvnw clean package && java -jar target/multipart-demo-swarm.jar
 ### Access to API
 
 ``` sh
-$ curl -X POST -F 'file=@README.md' http://localhost:8080/upload
+$ curl -X POST -F 'file=@README.md' http://localhost:8080/media
 ```
