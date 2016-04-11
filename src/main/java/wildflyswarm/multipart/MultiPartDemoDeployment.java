@@ -9,8 +9,6 @@ public class MultiPartDemoDeployment {
     JAXRSArchive deployment = ShrinkWrap.create(JAXRSArchive.class);
     deployment.addPackage(App.class.getPackage());
 
-    deployment.addAllDependencies();
-
     return deployment;
   }
 }

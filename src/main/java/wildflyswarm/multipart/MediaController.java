@@ -2,7 +2,6 @@ package wildflyswarm.multipart;
 
 import org.jboss.resteasy.plugins.providers.multipart.InputPart;
 import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput;
-import org.joda.time.DateTime;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -10,6 +9,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -25,8 +25,8 @@ public class MediaController {
 
     String fileName = getFileName(headers);
 
-    String message = String.format("uploaded file name: %s at %s", fileName, new DateTime());
-    
+    String message = String.format("uploaded file name: %s at %s", fileName, LocalDateTime.now());
+
     return Response.status(200)
       .entity(message).build();
   }
